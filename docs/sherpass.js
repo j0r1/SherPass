@@ -21,7 +21,7 @@ var SherPass = function()
     var m_decPassData = [ ];
     var m_totalEntries = 0;
 
-    var downloadKey = function(keyUrl, passDir)
+    var downloadKey = function(keyUrl, passDir, origPrivKeyURL, origPassDirURL)
     {
         NetworkConnection.get(keyUrl, function(response, statusCode, statusText)
         {
@@ -46,15 +46,15 @@ var SherPass = function()
             }
 
             // Ok, looks like a private key
-            _this.onobtainedprivatekey(privKeyURL);
+            _this.onobtainedprivatekey(origPrivKeyURL);
             _this.onloadingpassinfourls();
 
             // Make sure the parent callback is finished
-            setTimeout(function() { downloadPasswordURLs(passDir) }, 0);
+            setTimeout(function() { downloadPasswordURLs(passDir, origPassDirURL) }, 0);
         });
     }
 
-    var downloadPasswordURLs = function(passDir)
+    var downloadPasswordURLs = function(passDir, origPassDirURL)
     {
         NetworkConnection.get(passDir, function(response, statusCode, statusText)
         {
@@ -71,8 +71,6 @@ var SherPass = function()
 
                 if (passFileURLs.length == 0)
                     throw "No files found at the specified Dropbox directory file"
-
-                console.log(passFileURLs);
 
                 var dbPrefix = "https://www.dropbox.com/";
                 var suffix = ".pass";
@@ -97,7 +95,7 @@ var SherPass = function()
 
                 m_totalEntries = filteredURLs.length;
 
-                _this.onobtainedpasswordurls(dbPrefix + passDir);
+                _this.onobtainedpasswordurls(origPassDirURL);
                 _this.onloadingindividualpassfiles(filteredURLs.length);
 
                 // Make sure the parent callback is finished
@@ -173,7 +171,7 @@ var SherPass = function()
 
             _this.onloadingprivatekey();
 
-            setTimeout(function() { downloadKey(keyUrl, passDir); }, 0);
+            setTimeout(function() { downloadKey(keyUrl, passDir, privKeyURL, passDirURL); }, 0);
         }, 0);
     }
 

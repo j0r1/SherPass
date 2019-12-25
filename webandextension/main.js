@@ -807,10 +807,22 @@ function getRandomIdentifier(len)
     return str;
 }
 
+function getOrigin()
+{
+    var orig = window.location.origin;
+    var path = window.location.pathname;
+    var startIdx = path.length-1;
+
+    while (path[startIdx] != '/')
+        startIdx--;
+
+    return orig + path.substr(0, startIdx)
+}
+
 function createBookmarkletURL()
 {
     var randomFunctionName = getRandomIdentifier(32);
-    var resourceBase = window.location.protocol + "//" + document.location.host;
+    var resourceBase = getOrigin();
     
     try
     {
