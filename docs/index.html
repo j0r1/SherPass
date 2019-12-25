@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <script type="text/javascript" src="collections.js"></script>
+        <script type="text/javascript" src="sherpass.js"></script>
+        <script type="text/javascript" src="networkconnection.js"></script>
+        <script type="text/javascript" src="jquery.min.js"></script> <!-- version 1.6.2 -->
+        <script type="text/javascript" src="jquery.touchy.min.js"></script> <!-- version 1.0 -->
+    	<script type="text/javascript" src="vex.js"></script>
+	    <script type="text/javascript" src="vex.dialog.js"></script>
+        <script type="text/javascript" src="openpgp.js"></script>
+        <script type="text/javascript" src="aes.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+    	<link rel="stylesheet" href="vex.css">
+	    <link rel="stylesheet" href="vex-theme-wireframe.css">
+        <link rel="stylesheet" href="sherpass.css">
+        <link rel="shortcut icon" href="/favicon.png" type="image/png">
+    </head>
+    <body>
+        <div id="offsetdiv">
+            <h1>SherPass-lite<span id="sherpassversion"></span></h1>
+            <button id="configurebtn">Configure</button>
+            <button id="reloadbtn">Reload passwords</button>
+            <button id='decryptbutton'>Decrypt loaded passwords</button>
+            <button id='sessioncachebutton'>Cache decrypted data (unsafe!)</button>
+            <button id="iframeclosebutton" class="iframeonly">Close</button>
+            <label class="iframeonly"><input id="filterresults" name="filterresults" type="checkbox">Filter results</label>
+            <a id="sherpasslet" class="mainpageonly" href="">
+                SherPassLet
+            </a>
+            <br>
+            <div id="resultdiv">
+                <p>No password entries have been loaded or decrypted yet.</p>
+                <p>(click the logo for more information about this web application)</p>
+            </div>
+        </div>
+        <div id="redborder" class="iframeonly"></div>
+        <img id="logo" src="sherpass3.svg" />
+    </body>
+</html>

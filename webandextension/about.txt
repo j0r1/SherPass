@@ -1,0 +1,128 @@
+<script>
+function addDownloadURL(id)
+{
+	//document.write('<div style="clear:both;"></div><video style="border:1px dotted black;float:right;margin: 0px 0px 0px 20px" controls width="480" src="https://docs.google.com/uc?authuser=0&id=' + id +'&export=download" preload="metadata"></video>');
+	document.write('<br/><div style="clear:both;"></div><video style="border:1px dotted black;float:right;margin: 0px 0px 0px 20px" controls width="480" src="https://dl.dropboxusercontent.com/' + id +'" preload="metadata"></video>');
+
+}
+</script>
+
+About SherPass
+==============
+
+SherPass is a program to **manage passwords**, both for web sites and SSH access.
+
+It uses the [GNU Privacy Guard](https://www.gnupg.org/)
+to [PGP-encrypt](http://en.wikipedia.org/wiki/Pretty_Good_Privacy) login/password
+entries. By encrypting an entry with possibly multiple persons' public keys, several
+people will be able to obtain access to the password entry, each using his own
+private key. This allows password information for hosts or websites to be **shared**
+among several people, without needing a single master key.
+
+To manage passwords, download the standalone program for your operating system. To
+be able to use passwords in web pages more easily, you can use
+
+ - the Google Chrome [browser extension](https://chrome.google.com/webstore/detail/sherpass/ojlpghfphhbjkplpncihjookelhgphgj)
+ - the bookmarklet ('SherPassLet') on the [main web site](https://sherpass-lite.appspot.com)
+
+The [manual](#manual) explains how both the standalone program and the bookmarklet/extension
+can be used.
+
+Programs
+--------
+
+Installable packages for various platforms:
+
+ - Debian/Ubuntu: [sherpass-2.0.0.deb](https://dl.dropboxusercontent.com/s/eszinbxf8fs0kms/sherpass-2.0.0.deb)
+
+ - OS X: [SherPass-2.0.0.dmg](https://dl.dropboxusercontent.com/s/tat36m375rrxchw/SherPass-2.0.0.dmg)
+   This version was created with [PyInstaller](http://www.pyinstaller.org/) and includes
+   includes [QTerminal](https://github.com/qterminal) as a terminal to run SSH in, 
+   [sshpass](http://sourceforge.net/projects/sshpass/) to pass a password to the SSH session, and
+   [GnuPG](https://www.gnupg.org/) for the encryption and decryption of passwords.
+
+ - MS-Windows: [SherPass-2.0.0-installer.exe](https://dl.dropboxusercontent.com/s/gcmam3gdsg00mgw/SherPass-2.0.0-installer.exe)
+   This version was created with [py2exe](http://www.py2exe.org/) and includes
+   [Gpg4Win](http://www.gpg4win.org/), as well as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+
+The standalone program was written in Python, using several extra software
+packages listed below. The source code of the Python application, as well as this web site 
+can be found here:
+
+ - Source code: [sherpass-2.0.0.tar.gz](https://dl.dropboxusercontent.com/s/ki7z588tvlyenx3/sherpass-2.0.0.tar.gz)
+
+Copyright & disclaimer
+----------------------
+
+Everything is licensed under the [GPLv3](http://www.gnu.org/licenses/gpl-3.0.txt), the short 
+version of which is:
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+The full version can be found at [http://www.gnu.org/licenses/gpl-3.0.txt](http://www.gnu.org/licenses/gpl-3.0.txt)
+
+Software used for the standalone application
+--------------------------------------------
+
+ - [ PyCrypto ]( https://www.dlitz.net/software/pycrypto/ )
+ - [ python-gnupg ]( https://pythonhosted.org/python-gnupg/ )
+ - [ paramiko ]( http://www.paramiko.org/ )
+ - [ PyQt5 ]( https://www.riverbankcomputing.com/software/pyqt/intro )
+
+Software included in the installers
+-----------------------------------
+
+ - On OS X: [QTerminal](https://github.com/qterminal), [sshpass](http://sourceforge.net/projects/sshpass/) and
+   [GnuPG](https://www.gnupg.org/).
+ - On MS-Windows: [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) and 
+   [Gpg4Win](http://www.gpg4win.org/)
+
+Software used for web page
+--------------------------
+
+ - [JQuery](http://jquery.com/)
+ - [Touchy](http://touchyjs.org/)
+ - [CryptoJS](https://code.google.com/p/crypto-js/)
+ - [OpenPGP.js](http://openpgpjs.org/)
+ - [QR Code Generator](http://d-project.googlecode.com/svn/trunk/misc/qrcode/index.html)
+ - [Vex](http://github.hubspot.com/vex/docs/welcome/)
+
+<a name="manual"></a>
+Manual
+------
+
+The main SherPass program works with two directories:
+
+ 1. A directory with PGP _public_ keys which can be used to encrypt login/password entries.
+ 2. A directory in which each file is an login/password entry that has been encrypted with
+    one or more public keys from the other directory. The people who have a matching
+    _private_ key (and the corresponding passphrase) can decrypt these entries and view
+    the login/password information.
+
+By using shared directories for this (e.g. using a shared filesystem like NFS, or something
+like [Dropbox](https://www.dropbox.com)), this makes a shared password system possible. In this
+system each person can still have his own private key and passphrase, no globally known password
+or key is necessary.
+
+### UNDER CONSTRUCTION ###
+
+_Updating manual for v2 series_
+
+_The [manual for the v1 series](about_old.html#manual) may still be useful_
+
+Contact
+-------
+You can find contact information on [my Google+ page](https://plus.google.com/107709244254418689195/about).
+
+

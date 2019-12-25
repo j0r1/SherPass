@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "SherPass",
+  "description": "Browser interface for SherPass (shared) password management system",
+  "version": "VERSIONPLACEHOLDER",
+
+  "homepage_url": "http://sherpass-lite.appspot.com/",
+  "options_page": "index.html",
+  "permissions": [ "activeTab", "https://sherpass-lite.appspot.com/" ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "web_accessible_resources": [ "aes.js", "index.html", "jquery.min.js", "jquery.touchy.js", "main.js",
+                                "networkconnection.js", "openpgp.min.js", "openpgp.worker.min.js",
+				"openpgp.js", "openpgp.worker.js",
+				"sherpass.css", "sherpass.js", "vex-theme-wireframe.css", "vex.css",
+				"vex.dialog.js", "vex.js", "bililiteRange.js", "collections.js" ]
+}

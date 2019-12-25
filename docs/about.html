@@ -1,0 +1,164 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/Product">
+    <head>
+    	<title>SherPass</title>
+        <link rel="stylesheet" href="sherpass.css">
+        <link rel="shortcut icon" href="/favicon.png" type="image/png">
+
+	<meta property="og:image" content="https://sherpass-lite.appspot.com/icon2.png" />
+	<meta property="og:url" content="https://sherpass-lite.appspot.com/about.html" />
+	<meta property="og:description" content="Manage your passwords, share them if you need to." />
+	<meta property="og:site_name" content="SherPass" />
+	<meta property="og:title" content="SherPass" />
+	
+	<meta itemprop="name" content="SherPass">
+	<meta itemprop="description" content="Manage your passwords, share them if you need to.">
+	<meta itemprop="image" content="https://sherpass-lite.appspot.com/icon.png">
+	<style>
+		body {
+   			line-height: 1.6;
+		}
+	</style>
+    </head>
+    <body>
+
+	<div id="logo2div">
+    		<img id="logo2" src="sherpass3.svg" onclick="window.open('/','_self');" /><br>
+	</div>
+
+<script>
+function addDownloadURL(id)
+{
+    //document.write('<div style="clear:both;"></div><video style="border:1px dotted black;float:right;margin: 0px 0px 0px 20px" controls width="480" src="https://docs.google.com/uc?authuser=0&id=' + id +'&export=download" preload="metadata"></video>');
+    document.write('<br/><div style="clear:both;"></div><video style="border:1px dotted black;float:right;margin: 0px 0px 0px 20px" controls width="480" src="https://dl.dropboxusercontent.com/' + id +'" preload="metadata"></video>');
+
+}
+</script>
+
+<h1>About SherPass</h1>
+
+<p>SherPass is a program to <strong>manage passwords</strong>, both for web sites and SSH access.</p>
+
+<p>It uses the <a href="https://www.gnupg.org/">GNU Privacy Guard</a>
+to <a href="http://en.wikipedia.org/wiki/Pretty_Good_Privacy">PGP-encrypt</a> login/password
+entries. By encrypting an entry with possibly multiple persons' public keys, several
+people will be able to obtain access to the password entry, each using his own
+private key. This allows password information for hosts or websites to be <strong>shared</strong>
+among several people, without needing a single master key.</p>
+
+<p>To manage passwords, download the standalone program for your operating system. To
+be able to use passwords in web pages more easily, you can use</p>
+
+<ul>
+<li>the Google Chrome <a href="https://chrome.google.com/webstore/detail/sherpass/ojlpghfphhbjkplpncihjookelhgphgj">browser extension</a></li>
+<li>the bookmarklet ('SherPassLet') on the <a href="https://sherpass-lite.appspot.com">main web site</a></li>
+</ul>
+
+<p>The <a href="#manual">manual</a> explains how both the standalone program and the bookmarklet/extension
+can be used.</p>
+
+<h2>Programs</h2>
+
+<p>Installable packages for various platforms:</p>
+
+<ul>
+<li><p>Debian/Ubuntu: <a href="https://dl.dropboxusercontent.com/s/eszinbxf8fs0kms/sherpass-2.0.0.deb">sherpass-2.0.0.deb</a></p></li>
+<li><p>OS X: <a href="https://dl.dropboxusercontent.com/s/tat36m375rrxchw/SherPass-2.0.0.dmg">SherPass-2.0.0.dmg</a>
+This version was created with <a href="http://www.pyinstaller.org/">PyInstaller</a> and includes
+includes <a href="https://github.com/qterminal">QTerminal</a> as a terminal to run SSH in, 
+<a href="http://sourceforge.net/projects/sshpass/">sshpass</a> to pass a password to the SSH session, and
+<a href="https://www.gnupg.org/">GnuPG</a> for the encryption and decryption of passwords.</p></li>
+<li><p>MS-Windows: <a href="https://dl.dropboxusercontent.com/s/gcmam3gdsg00mgw/SherPass-2.0.0-installer.exe">SherPass-2.0.0-installer.exe</a>
+This version was created with <a href="http://www.py2exe.org/">py2exe</a> and includes
+<a href="http://www.gpg4win.org/">Gpg4Win</a>, as well as <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY</a>.</p></li>
+</ul>
+
+<p>The standalone program was written in Python, using several extra software
+packages listed below. The source code of the Python application, as well as this web site 
+can be found here:</p>
+
+<ul>
+<li>Source code: <a href="https://dl.dropboxusercontent.com/s/ki7z588tvlyenx3/sherpass-2.0.0.tar.gz">sherpass-2.0.0.tar.gz</a></li>
+</ul>
+
+<h2>Copyright &amp; disclaimer</h2>
+
+<p>Everything is licensed under the <a href="http://www.gnu.org/licenses/gpl-3.0.txt">GPLv3</a>, the short 
+version of which is:</p>
+
+<pre><code>This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</code></pre>
+
+<p>The full version can be found at <a href="http://www.gnu.org/licenses/gpl-3.0.txt">http://www.gnu.org/licenses/gpl-3.0.txt</a></p>
+
+<h2>Software used for the standalone application</h2>
+
+<ul>
+<li><a href="https://www.dlitz.net/software/pycrypto/"> PyCrypto </a></li>
+<li><a href="https://pythonhosted.org/python-gnupg/"> python-gnupg </a></li>
+<li><a href="http://www.paramiko.org/"> paramiko </a></li>
+<li><a href="https://www.riverbankcomputing.com/software/pyqt/intro"> PyQt5 </a></li>
+</ul>
+
+<h2>Software included in the installers</h2>
+
+<ul>
+<li>On OS X: <a href="https://github.com/qterminal">QTerminal</a>, <a href="http://sourceforge.net/projects/sshpass/">sshpass</a> and
+<a href="https://www.gnupg.org/">GnuPG</a>.</li>
+<li>On MS-Windows: <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY</a> and 
+<a href="http://www.gpg4win.org/">Gpg4Win</a></li>
+</ul>
+
+<h2>Software used for web page</h2>
+
+<ul>
+<li><a href="http://jquery.com/">JQuery</a></li>
+<li><a href="http://touchyjs.org/">Touchy</a></li>
+<li><a href="https://code.google.com/p/crypto-js/">CryptoJS</a></li>
+<li><a href="http://openpgpjs.org/">OpenPGP.js</a></li>
+<li><a href="http://d-project.googlecode.com/svn/trunk/misc/qrcode/index.html">QR Code Generator</a></li>
+<li><a href="http://github.hubspot.com/vex/docs/welcome/">Vex</a></li>
+</ul>
+
+<p><a name="manual"></a></p>
+
+<h2>Manual</h2>
+
+<p>The main SherPass program works with two directories:</p>
+
+<ol>
+<li>A directory with PGP <em>public</em> keys which can be used to encrypt login/password entries.</li>
+<li>A directory in which each file is an login/password entry that has been encrypted with
+one or more public keys from the other directory. The people who have a matching
+<em>private</em> key (and the corresponding passphrase) can decrypt these entries and view
+the login/password information.</li>
+</ol>
+
+<p>By using shared directories for this (e.g. using a shared filesystem like NFS, or something
+like <a href="https://www.dropbox.com">Dropbox</a>), this makes a shared password system possible. In this
+system each person can still have his own private key and passphrase, no globally known password
+or key is necessary.</p>
+
+<h3>UNDER CONSTRUCTION</h3>
+
+<p><em>Updating manual for v2 series</em></p>
+
+<p><em>The <a href="about_old.html#manual">manual for the v1 series</a> may still be useful</em></p>
+
+<h2>Contact</h2>
+
+<p>You can find contact information on <a href="https://plus.google.com/107709244254418689195/about">my Google+ page</a>.</p>
+
+    </body>
+</html>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SherPass</class>
+ <widget class="QMainWindow" name="SherPass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>708</width>
+    <height>561</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SherPass</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTabWidget" name="passTabs">
+        <property name="currentIndex">
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="addEntryButton">
+          <property name="text">
+           <string>Add entry</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="changeEntryButton">
+          <property name="text">
+           <string>Change entry</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeEntryButton">
+          <property name="text">
+           <string>Remove entry</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="filterEdit"/>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="sshButton">
+          <property name="text">
+           <string>SSH</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>708</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMain">
+    <property name="title">
+     <string>Main</string>
+    </property>
+    <addaction name="actionSet_master_passphrases"/>
+    <addaction name="actionTCP_Connection_log"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuick_start_wizard"/>
+    <addaction name="actionManage_private_keys"/>
+    <addaction name="actionGlobal_options"/>
+    <addaction name="actionAdd_password_collection_tab"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuPassword_entries">
+    <property name="title">
+     <string>Current password collection</string>
+    </property>
+    <addaction name="actionShow_known_keys"/>
+    <addaction name="actionRe_load_keys_and_password_entries"/>
+    <addaction name="actionRe_encode_all_known_entries"/>
+    <addaction name="actionExport_all_known_entries"/>
+    <addaction name="separator"/>
+    <addaction name="actionRemove_password_collection"/>
+    <addaction name="actionConfigure_password_collection"/>
+   </widget>
+   <widget class="QMenu" name="menuChange_SSH_password">
+    <property name="title">
+     <string>Change SSH password</string>
+    </property>
+    <addaction name="actionChange_to_specific_password"/>
+    <addaction name="actionChange_to_random_password"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionVersion"/>
+    <addaction name="actionWeb_site"/>
+   </widget>
+   <addaction name="menuMain"/>
+   <addaction name="menuPassword_entries"/>
+   <addaction name="menuChange_SSH_password"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionConfigure">
+   <property name="text">
+    <string>Configure</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionShow_known_keys">
+   <property name="text">
+    <string>Show known keys</string>
+   </property>
+  </action>
+  <action name="actionRe_load_keys">
+   <property name="text">
+    <string>Re-load keys and password entries</string>
+   </property>
+  </action>
+  <action name="actionSet_passphrase_re_load">
+   <property name="text">
+    <string>Set passphrase and re-load</string>
+   </property>
+  </action>
+  <action name="actionRe_load_password_entries">
+   <property name="text">
+    <string>Re-load password entries</string>
+   </property>
+  </action>
+  <action name="actionRe_encode_all_known_entries">
+   <property name="text">
+    <string>Re-encode all known entries</string>
+   </property>
+  </action>
+  <action name="actionExport_public_key">
+   <property name="text">
+    <string>Export public key</string>
+   </property>
+  </action>
+  <action name="actionView_private_key">
+   <property name="text">
+    <string>View private key</string>
+   </property>
+  </action>
+  <action name="actionView_public_key">
+   <property name="text">
+    <string>View public key</string>
+   </property>
+  </action>
+  <action name="actionChange_to_specific_password">
+   <property name="text">
+    <string>Change to specific password</string>
+   </property>
+  </action>
+  <action name="actionChange_to_random_password">
+   <property name="text">
+    <string>Change to random password</string>
+   </property>
+  </action>
+  <action name="actionTCP_Connection_log">
+   <property name="text">
+    <string>TCP Connection log</string>
+   </property>
+  </action>
+  <action name="actionVersion">
+   <property name="text">
+    <string>Version</string>
+   </property>
+  </action>
+  <action name="actionWeb_site">
+   <property name="text">
+    <string>Web site</string>
+   </property>
+  </action>
+  <action name="actionExport_all_known_entries">
+   <property name="text">
+    <string>Export all known entries</string>
+   </property>
+  </action>
+  <action name="actionSet_master_passphrases">
+   <property name="text">
+    <string>Set master passphrases and restart</string>
+   </property>
+  </action>
+  <action name="actionManage_private_keys">
+   <property name="text">
+    <string>Manage private keys</string>
+   </property>
+  </action>
+  <action name="actionAdd_password_collection_tab">
+   <property name="text">
+    <string>Add password collection tab</string>
+   </property>
+  </action>
+  <action name="actionTCP_Server_configuration">
+   <property name="text">
+    <string>TCP Server configuration</string>
+   </property>
+  </action>
+  <action name="actionRemove_password_collection">
+   <property name="text">
+    <string>Remove password collection</string>
+   </property>
+  </action>
+  <action name="actionConfigure_password_collection">
+   <property name="text">
+    <string>Manage password collection</string>
+   </property>
+  </action>
+  <action name="actionGlobal_options">
+   <property name="text">
+    <string>Global options</string>
+   </property>
+  </action>
+  <action name="actionRe_load_keys_and_password_entries">
+   <property name="text">
+    <string>Re-load keys and password entries</string>
+   </property>
+  </action>
+  <action name="actionQuick_start_wizard">
+   <property name="text">
+    <string>Quick start wizard</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>passTabs</tabstop>
+  <tabstop>addEntryButton</tabstop>
+  <tabstop>changeEntryButton</tabstop>
+  <tabstop>removeEntryButton</tabstop>
+  <tabstop>filterEdit</tabstop>
+  <tabstop>sshButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
