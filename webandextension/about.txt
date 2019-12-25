@@ -23,7 +23,7 @@ To manage passwords, download the standalone program for your operating system. 
 be able to use passwords in web pages more easily, you can use
 
  - the Google Chrome [browser extension](https://chrome.google.com/webstore/detail/sherpass/ojlpghfphhbjkplpncihjookelhgphgj)
- - the bookmarklet ('SherPassLet') on the [main web site](https://sherpass-lite.appspot.com)
+ - the bookmarklet ('SherPassLet') on the [main web site](https://j0r1.github.io/SherPass/)
 
 The [manual](#manual) explains how both the standalone program and the bookmarklet/extension
 can be used.
