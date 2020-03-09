@@ -1,0 +1,287 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/Product">
+    <head>
+    	<title>SherPass</title>
+        <link rel="stylesheet" href="sherpass.css">
+        <link rel="shortcut icon" href="/favicon.png" type="image/png">
+
+	<meta property="og:image" content="https://sherpass-lite.appspot.com/icon2.png" />
+	<meta property="og:url" content="https://sherpass-lite.appspot.com/about.html" />
+	<meta property="og:description" content="Manage your passwords, share them if you need to." />
+	<meta property="og:site_name" content="SherPass" />
+	<meta property="og:title" content="SherPass" />
+	
+	<meta itemprop="name" content="SherPass">
+	<meta itemprop="description" content="Manage your passwords, share them if you need to.">
+	<meta itemprop="image" content="https://sherpass-lite.appspot.com/icon.png">
+    <style>
+    body {
+       line-height: 1.6;
+    }
+    </style>
+    </head>
+    <body>
+	<div id="fb-root"></div>
+	<script>
+	(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<div id="logo2div">
+    		<img id="logo2" src="sherpass3.svg" onclick="window.open('/','_self');" /><br>
+		<div class="g-plusone" data-size="medium" data-href="https://sherpass-lite.appspot.com/about.html"></div><br>
+		<div class="fb-like" data-href="https://sherpass-lite.appspot.com/about.html" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div><br>
+	</div>
+
+<script>
+function addDownloadURL(id)
+{
+    //document.write('<div style="clear:both;"></div><video style="border:1px dotted black;float:right;margin: 0px 0px 0px 20px" controls width="480" src="https://docs.google.com/uc?authuser=0&id=' + id +'&export=download" preload="metadata"></video>');
+    document.write('<br/><div style="clear:both;"></div><video style="border:1px dotted black;float:right;margin: 0px 0px 0px 20px" controls width="480" src="https://dl.dropboxusercontent.com/' + id +'" preload="metadata"></video>');
+
+}
+</script>
+
+<h1>About SherPass</h1>
+
+<p>SherPass is a program to <strong>manage passwords</strong>, both for web sites and SSH access.</p>
+
+<p>It uses the <a href="https://www.gnupg.org/">GNU Privacy Guard</a>
+to <a href="http://en.wikipedia.org/wiki/Pretty_Good_Privacy">PGP-encrypt</a> login/password
+entries. By encrypting an entry with possibly multiple persons' public keys, several
+people will be able to obtain access to the password entry, each using his own
+private key. This allows password information for hosts or websites to be <strong>shared</strong>
+among several people, without needing a single master key.</p>
+
+<p>To manage passwords, download the standalone program for your operating system. To
+be able to use passwords in web pages more easily, you can use</p>
+
+<ul>
+<li>the Google Chrome <a href="https://chrome.google.com/webstore/detail/sherpass/ojlpghfphhbjkplpncihjookelhgphgj">browser extension</a></li>
+<li>the bookmarklet ('SherPassLet') on the <a href="https://sherpass-lite.appspot.com">main web site</a></li>
+</ul>
+
+<p>The <a href="#manual">manual</a> explains how both the standalone program and the bookmarklet/extension
+can be used.</p>
+
+<h2>Programs</h2>
+
+<p>Installable packages for various platforms:</p>
+
+<ul>
+<li><p>Debian/Ubuntu: <a href="https://dl.dropboxusercontent.com/s/blo8mzm91vx75zr/SherPass-1.2.0.deb">SherPass-1.2.0.deb</a></p></li>
+<li><p>OS X: <a href="https://dl.dropboxusercontent.com/s/c3vkh4r2l1ducdg/SherPass-1.2.0.dmg">SherPass-1.2.0.dmg</a> <br />
+You'll need to install <a href="http://pyside.markus-ullmann.de/pyside-1.2.1-qt4.8.5-py27apple-developer-signed.pkg">PySide</a>
+and <a href="http://download.qt-project.org/archive/qt/4.8/4.8.5/qt-mac-opensource-4.8.5.dmg">Qt</a>
+separately for this to work. <br />
+This package includes <a href="https://github.com/qterminal">QTerminal</a> as a terminal to run SSH in, 
+<a href="http://sourceforge.net/projects/sshpass/">sshpass</a> to pass a password to the SSH session, and
+<a href="https://www.gnupg.org/">GnuPG</a> for the encryption and decryption of passwords.</p></li>
+<li><p>MS-Windows: <a href="https://dl.dropboxusercontent.com/s/iw7nazadl92u0i9/SherPass-1.2.0-installer.exe">SherPass-1.2.0-installer.exe</a>
+This version was created with <a href="http://www.pyinstaller.org/">PyInstaller</a> and includes
+<a href="http://www.gpg4win.org/">Gpg4Win</a>, as well as <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY</a>.</p></li>
+</ul>
+
+<p>The standalone program was written in Python, using several extra software
+packages listed below. The source code of the Python application, as well as this web site 
+can be found here:</p>
+
+<ul>
+<li>Source code: <a href="https://dl.dropboxusercontent.com/s/5bofp15dam3d4n7/sherpass-1.2.0.tar.gz">sherpass-1.2.0.tar.gz</a></li>
+</ul>
+
+<h2>Copyright &amp; disclaimer</h2>
+
+<p>Everything is licensed under the <a href="http://www.gnu.org/licenses/gpl-3.0.txt">GPLv3</a>, the short 
+version of which is:</p>
+
+<pre><code>This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</code></pre>
+
+<p>The full version can be found at <a href="http://www.gnu.org/licenses/gpl-3.0.txt">http://www.gnu.org/licenses/gpl-3.0.txt</a></p>
+
+<h2>Software used for the standalone application</h2>
+
+<ul>
+<li><a href="https://www.dlitz.net/software/pycrypto/"> PyCrypto </a></li>
+<li><a href="https://pythonhosted.org/python-gnupg/"> python-gnupg </a></li>
+<li><a href="http://www.paramiko.org/"> paramiko </a></li>
+<li><a href="http://qt-project.org/wiki/pyside"> PySide </a></li>
+</ul>
+
+<h2>Software included in the installers</h2>
+
+<ul>
+<li>On OS X: <a href="https://github.com/qterminal">QTerminal</a>, <a href="http://sourceforge.net/projects/sshpass/">sshpass</a> and
+<a href="https://www.gnupg.org/">GnuPG</a>.</li>
+<li>On MS-Windows: <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY</a> and 
+<a href="http://www.gpg4win.org/">Gpg4Win</a></li>
+</ul>
+
+<h2>Software used for web page</h2>
+
+<ul>
+<li><a href="http://jquery.com/">JQuery</a></li>
+<li><a href="http://touchyjs.org/">Touchy</a></li>
+<li><a href="https://code.google.com/p/crypto-js/">CryptoJS</a></li>
+<li><a href="http://openpgpjs.org/">OpenPGP.js</a></li>
+<li><a href="http://d-project.googlecode.com/svn/trunk/misc/qrcode/index.html">QR Code Generator</a></li>
+<li><a href="http://github.hubspot.com/vex/docs/welcome/">Vex</a></li>
+</ul>
+
+<p><a name="manual"></a></p>
+
+<h2>Manual</h2>
+
+<p>The main SherPass program works with two directories:</p>
+
+<ol>
+<li>A directory with PGP <em>public</em> keys which can be used to encrypt login/password entries.</li>
+<li>A directory in which each file is an login/password entry that has been encrypted with
+one or more public keys from the other directory. The people who have a matching
+<em>private</em> key (and the corresponding passphrase) can decrypt these entries and view
+the login/password information.</li>
+</ol>
+
+<p>By using shared directories for this (e.g. using a shared filesystem like NFS, or something
+like <a href="https://www.dropbox.com">Dropbox</a>), this makes a shared password system possible. In this
+system each person can still have his own private key and passphrase, no globally known password
+or key is necessary.</p>
+
+<script>addDownloadURL("s/wmzgiakiz3ozcxw/sherpass_config2.webm");</script>
+
+<h3>Configuration</h3>
+
+<p>This first movie demonstrates how you can configure SherPass. In this video, SherPass has already
+been installed. Once started, the following steps are performed:</p>
+
+<ol>
+<li><p>The public key directory and the directory to use for the login/password entries are created and
+selected in the configuration dialog.</p></li>
+<li><p>The necessary information is entered to generate a private/public key pair. Depending on the
+complexity, generating a keypair can take a while, much longer than is shown in the video here.</p></li>
+<li><p>The 'TCP server' is enabled, and an access URL and AES encryption key are generated. This allows
+the bookmarklet/extension to connect directly to the running SherPass application. The first 
+random string is needed for a correct URL, which should help to prevent other web pages from 
+connecting to the main application. The data sent is also encrypted using the second random
+string as an extra safety measure.</p></li>
+<li><p>A prefix for the filenames which will contain the public/private keys is entered. In this case, the
+SherPass configuration directory will store the private key in <code>jori.privkey</code>, while the public
+key <code>jori.pubkey</code> is automatically stored in the directory for the public keys.</p></li>
+</ol>
+
+<script>addDownloadURL("s/7pg8ty122rwi3ob/sherpass_entries.webm");</script>
+
+<h3>Adding password entries</h3>
+
+<p>In this movie you can see two login/password entries being added. One is for SSH access while the other
+contains information which can be used on a website. Each of these entries will correspond to a file that
+is stored in the 'password info directory' from the configuration phase above.</p>
+
+<p>For an entry of type 'SSH', the specified host/IP will be used when launching an SSH session. For a type
+of 'HTTP' or 'HTTPS', that host/IP line is actually interpreted as a regular expression and is used to filter
+the entries so that only relevant entries are shown in the bookmarklet or Chrome extension.</p>
+
+<script>addDownloadURL("s/ccj562z7a55fvn2/sherpass_ssh.webm");</script>
+
+<h3>Starting an SSH session</h3>
+
+<p>To be able to SSH to a specific entry, you just need to make sure that the entry is of type 'SSH'. Pressing
+the <code>SSH</code> button in the user interface will then launch the command specified in the configuration dialog.
+On GNU/Linux, the <a href="http://sshpass.sourceforge.net/">sshpass</a> program is used to specify the SSH password using an
+environment variable while on MS-Windows this is done on the command line using 
+<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">putty.exe</a>. Needless to say, passing a
+password as a plain text argument or as an environment variable is not the most secure solution, so use
+with care!</p>
+
+<p>In the 'SSH command' specified in the configuration dialog, a number of substitutions will be made:</p>
+
+<ul>
+<li><p>The hostname (<em>%h</em>) and port number (<em>%P</em>) will be derived from the 'Host/IP' line in a password
+entry. For example, if this line says <code>my.hostname.com:8022</code>, then the host will be <code>my.hostname.com</code>
+and the port number will be 8022.</p></li>
+<li><p><em>%u</em> will be replaced by the contents of the 'Login' line in the password entry.</p></li>
+<li><p><em>%p</em> will be replaced by the contents of the 'Password' line in the password entry. Note that you
+may not need this if you're passing the password as an environment variable.</p></li>
+</ul>
+
+<script>addDownloadURL("s/4oaou6epoh36jyv/sherpass_website.webm");</script>
+
+<h3>Using the website</h3>
+
+<p>You can get an overview of your password entries using the <a href="https://sherpass.appspot.com">SherPass web site</a>.
+The login/password entries can be obtained in two ways:</p>
+
+<ol>
+<li><p>The first way is by putting your password entries in a Dropbox directory and getting the
+'share' link to this directory using the Dropbox web site. You'll also have to store your private
+key on Dropbox and obtain a link to it in a similar way. Making your private key available
+on the internet in this way is probably not the most secure practice, but in some cases it
+may be useful to access your password entries without having to run the standalone SherPass
+program.</p></li>
+<li><p>The second approach is the one which is shown in the movie, and instructs the code from the web
+site to connect to the SherPass program running on your computer. To allow the web site to
+access the password entries that are currently loaded in the SherPass program, we need to
+copy-paste the access URL and the AES encryption key specified in the configuration dialog.</p></li>
+</ol>
+
+<script>addDownloadURL("s/ktnjemvl45vpzpb/sherpass_bookmarklet.webm");</script>
+
+<h3>Using the bookmarklet</h3>
+
+<p>The main web site also contains a bookmarklet called 'SherPassLet'. You can install it in your
+browser by just dragging it to the bookmarks bar. This is a small utility that lets you access
+data stored in the login/password entries and use these data in another web page.</p>
+
+<p>In the movie, we just surf to <code>google.com</code> and click on the SherPassLet. You'll see that suddenly
+an input field becomes greenish. When double clicking (or swiping) this input field, an overlay appears
+with matching password entries for this site. The password entries are retrieved using one of the
+two methods described in the previous step, in this case by connecting to the running SherPass
+program.</p>
+
+<p>The simple example does not have a matching site, so no entries are displayed. When the 'filter' 
+option is disabled however, you'll see that our two login/password entries are shown. When you
+double click (or swipe) one of the fields, the text from that field is entered in the (now greenish) 
+input field that was double clicked earlier.</p>
+
+<script>addDownloadURL("s/a9pmatop38hsdsv/sherpass_chromeextension.webm");</script>
+
+<h3>Using the Chrome extension</h3>
+
+<p>As you can see in this video, if you're using the Chrome browser you can also install a Chrome
+extension with the same functionality as the bookmarklet. Because everything is locally installed
+on your computer it should be slightly faster. You will need to enter your Dropbox URLs or access
+codes again if you're using the extension though, but these settings will also be remembered.</p>
+
+<div style="clear:both;"></div>
+
+<h2>Contact</h2>
+
+<p>You can find contact information on <a href="https://plus.google.com/107709244254418689195/about">my Google+ page</a>.</p>
+
+	<!-- Place this tag after the last +1 button tag. -->
+	<script type="text/javascript">
+	  (function() {
+	    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	    po.src = 'https://apis.google.com/js/platform.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	  })();
+	</script>
+    </body>
+</html>

@@ -265,18 +265,20 @@ as number of threads. Defaulting to 1.""".format(e))
 
         pos = 0
         for x in filesToLoad:
-            groups[pos%numThreads].append(x)
+            fullFileName = x[1]
+            print("Loading information for {}".format(fullFileName))
+            with open(fullFileName, "rb") as f:
+                data = f.read()
+                f.close()
+
+            groups[pos%numThreads].append(x + (data,))
             pos += 1
 
         def bgproc(i):
 
             filesToLoad = groups[i]
 
-            for fileName,fullFileName,fileSize,fileTime in filesToLoad:
-                # print("Loading information for {}".format(fileName))
-                with open(fullFileName, "rb") as f:
-                    data = f.read()
-                    f.close()
+            for fileName,fullFileName,fileSize,fileTime,data in filesToLoad:
 
                 decData = None
                 try:
